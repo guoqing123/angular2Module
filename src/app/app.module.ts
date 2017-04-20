@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core'
 import {RouterModule} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
 
@@ -11,10 +11,11 @@ import {CollectionComponent} from './collection';
 import {ListComponent, ListItemComponent} from './list';
 import {DetailComponent} from './detail';
 import {EditComponent} from './edit';
+import {SexReform,SelectContact} from './pipe';
 
 import {ContactService, UtilService, FooterComponent, 
   HeaderComponent, PhonePipe, BtnClickDirective} from "./shared";
-
+import {BeautifulBackgroundDirective} from './directive/beautifuBackground.directive'
 
 @NgModule({
   declarations: [
@@ -25,9 +26,11 @@ import {ContactService, UtilService, FooterComponent,
     EditComponent,
     HeaderComponent, FooterComponent,
     PhonePipe,
-    BtnClickDirective
+    BtnClickDirective,
+    SexReform,SelectContact,
+    BeautifulBackgroundDirective
   ],
-  imports     : [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
+  imports     : [BrowserModule, FormsModule, ReactiveFormsModule,HttpModule, RouterModule.forRoot(rootRouterConfig)],
   providers   : [ContactService, UtilService],
   bootstrap   : [AppComponent]
 })

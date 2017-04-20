@@ -10,10 +10,14 @@ import {ContactService} from 'shared/contact.service';
 export class ListComponent implements OnInit {
   contacts: {};
   private isAdd:number = 1;
+  prefix1:string = '张';
+  number1:number = 0;
+  number2:number = 10;
 
   constructor(
     private _router: Router,
-    private _contactService: ContactService
+    private _contactService: ContactService,
+
   ) {}
 
   ngOnInit() {
@@ -38,6 +42,10 @@ export class ListComponent implements OnInit {
 
   routerNavigate(id: number) {
     this._router.navigate(['/list',id]);
+  }
+
+  trackByContacts(index:number,contact){
+    return contact.id
   }
 
 }

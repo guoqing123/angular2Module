@@ -11,9 +11,11 @@ export class ListItemComponent implements OnInit {
   @Input() contact:any = {};
   @Output() routerNavigate = new EventEmitter<number>();
 
+
   constructor() {}
 
   ngOnInit() {
+
 
   }
 

@@ -38,21 +38,24 @@ export class EditComponent implements OnInit {
   ngOnInit() {
     this.getContacts();
     this._activatedRoute.params.subscribe(params => {
-      // this.isAdd = params['isAdd'];
       this.editId = params['id'];
       this.isAdd = !this.editId;
     })
     this.operateTitle = this.isAdd ? '新建联系人' : '编辑联系人';
     //
     if(!this.isAdd) this.getContactDetailById(this.editId);
+
+
+
   }
 
-  submitForm() {
+  submitForm(item) {
     this.nameTip = true;
     this.phoneTip = true;
     this.addrTip = true;
     this.emailTie = true;
     this.birTip = true;
+    console.log(item)
 
     if(this.isName && this.isPhoneNum && this.isAddr && this.isEmail && this.isBir){
       if(this.isAdd) this.addContact();
